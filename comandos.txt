@@ -1,0 +1,19 @@
+go test -> test del documento *_test.go
+
+go test -v -> muestra cada uno de los tests
+
+go test -cover -> muestra el porcentaje de testing hecho al documento
+
+go test -coverprofile=coverage.out -> crea un archivo llamado "coverage.out" con informacion sobre el total de testing cubierto
+
+go tool cover -func=coverage.out -> muestra la informacion del archivo coverage.out de manera legible para el usuario
+
+go tool cover -html=coverage.out -> muestra la informacion de coverage.out en un html
+
+go test -cpuprofile=cou.out -> podemos ver donde se esta demorando nuestra prueba en el archivo cou.out
+
+go tool pprof cou.out -> abre un menu interactivo dentro del archivo cou.out
+    top - - - - - - - -> muestra donde se esta demorando la prueba
+    list <FuncName> - -> muestra mas informacion de los tiempos de ejecucion de la funcion que estamos probando
+    web - - - - - - - -> nos genera un reporte formato .svg con informacion (se debe instalar Graphviz)
+    pdf - - - - - - - -> genera el reporte en .pdf
